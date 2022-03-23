@@ -7,7 +7,7 @@
 3. Open terminal and cd into the project folder
 4. To run the Unit Tests use the following command `mvn test`
 5. To run tests and build the project run the following command `mvn package`
-6. To run the project use the following command `mvn exec:java -Dexec.args="<<complete_path_to_input_file>>"`
+6. To run the project use the following command from `java -jar <<path_to_compiled_jar>> <<path_to_input_file>>`
 
 ### Problem Statement
 Assign seats to Customers in the Movie Theater which maximizes the Customer Satisfaction as well as Customer Safety.
