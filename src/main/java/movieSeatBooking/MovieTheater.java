@@ -14,6 +14,16 @@ public class MovieTheater {
 	private int[] seatsPresentInRow = new int[Configurations.N_ROWS];
 
 
+	public int[][] getSeats() {
+		//only for testing
+		return seats;
+	}
+
+	public int[] getSeatsPresentInRow() {
+		//only for testing
+		return seatsPresentInRow;
+	}
+
 	public MovieTheater(String theaterId) {
 		this.theaterId = theaterId;
 		for(int j =0;j< Configurations.N_ROWS; j++) {
@@ -148,17 +158,14 @@ public class MovieTheater {
 
 					int l = c, r= c+1;
 					int lCount = seatsRequested, rCount = seatsRequested;
-					while(l >= 0 && r < Configurations.N_SEATS) {
+					while(l >= 0 || r < Configurations.N_SEATS) {
 
-						if(this.seats[row][l] == 0) {
-
+						if(l >= 0 && this.seats[row][l] == 0) {
 							lCount--;
-
 						}else {
 							lCount = seatsRequested;
-
 						}
-						if(this.seats[row][r] == 0) {
+						if(r < Configurations.N_SEATS && this.seats[row][r] == 0) {
 							rCount--;
 						}else {
 							rCount = seatsRequested;
